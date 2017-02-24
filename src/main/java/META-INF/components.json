@@ -1,0 +1,599 @@
+{
+   "name":"cronos-components",
+   "version":"1.0.0",
+   "components":[
+      {
+         "name":"crn-anchor",
+         "text":"Link",
+         "class":"cpn cpn-anchor",
+         "templateURL":"src/main/webapp/components/templates/anchor.template.html",
+         "properties":{
+            "onclick":{
+               "type":"event"
+            },
+            "target":{
+               "removable":false,
+               "type":"list",
+               "options":[
+                  {
+                     "key":"_blank",
+                     "value":"Nova janela"
+                  },
+                  {
+                     "key":"_self",
+                     "value":"Mesma janela"
+                  },
+                  {
+                     "key":"_parent",
+                     "value":"Janela pai"
+                  },
+                  {
+                     "key":"_top",
+                     "value":"Top"
+                  }
+               ]
+            },
+            "href":{
+               "removable":false,
+               "type":"projectResource",
+               "resourceType":"text/html"
+            }
+         }
+      },
+      {
+         "name":"crn-button",
+         "text":"Button",
+         "class":"cpn cpn-button",
+         "templateURL":"src/main/webapp/components/templates/button.template.html",
+         "properties":{
+            "ng-click":{
+               "removable":true,
+               "type":"event"
+            },
+            "onmouseover":{
+               "removable":true,
+               "type":"event"
+            }
+         }
+      },
+      {
+         "name":"crn-report-button",
+         "text":"Button Report",
+         "class":"cpn cpn-button",
+         "templateURL":"src/main/webapp/components/templates/button-report.template.html",
+         "properties":{
+            "ng-click":{
+               "type":"report-event"
+            },
+            "onmouseover":{
+               "removable":true,
+               "type":"event"
+            }
+         }
+      },
+      {
+         "name":"crn-accordion",
+         "text":"Accordion",
+         "class":"cpn cpn-accordion",
+         "handleRules":{
+            "canOrder":true,
+            "canActivate":true,
+            "canIncrement":true,
+            "rules":[
+               {
+                  "activeSelector":"div.panel-collapse.collapse.in",
+                  "activeClass":"in",
+                  "sourceHTML":"<div class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"heading${RANDOM}\"><h4 class=\"panel-title\"><a class=\"collapsed\" role=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse${RANDOM}\" aria-expanded=\"false\" aria-controls=\"collapse${RANDOM}\" target=\"self\">New Group Title</a></h4></div><div class=\"panel-collapse content\" role=\"tabpanel\"><div id=\"collapse${RANDOM}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading${RANDOM}\"><div class=\"panel-body\">New Group Description     </div></div></div></div>",
+                  "targetSelector":"div.panel-group"
+               },
+               {
+                  "activeSelector":"div.panel-collapse.collapse.in",
+                  "activeClass":"in",
+                  "targetSelector":"div.panel-collapse.content"
+               }
+            ]
+         },
+         "templateURL":"src/main/webapp/components/templates/accordion.template.html",
+         "properties":{
+            "ng-click":{
+               "removable":true,
+               "type":"event"
+            },
+            "onmouseover":{
+               "removable":true,
+               "type":"event"
+            }
+         }
+      },
+      {
+         "name":"crn-carousel",
+         "text":"Carousel",
+         "class":"cpn cpn-carousel",
+         "handleRules":{
+            "canOrder":true,
+            "canActivate":true,
+            "canIncrement":true,
+            "rules":[
+               {
+                  "activeSelector":"ol.carousel-indicators li.active",
+                  "activeClass":"active",
+                  "sourceHTML":" <li></li>",
+                  "targetSelector":"ol.carousel-indicators"
+               },
+               {
+                  "activeSelector":"div.carousel-inner div.item.active",
+                  "activeClass":"active",
+                  "sourceHTML":"<div class=\"item\"><img alt=\"New slide [900x500]\" style=\"margin: 0 auto;\" data-src=\"holder.js/900x500/auto/#777:#555/text:New slide\" src=\"data:image/png;base64,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YhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACAjRgEAyIhRAAAyYhQAgIwYBQAgI0YBAMiIUQAAMmIUAICMGAUAICNGAQDIiFEAADJiFACAjBgFACDy99//Dz8WqnGpeRKeAAAAAElFTkSuQmCC\" data-holder-rendered=\"true\"></div>",
+                  "targetSelector":"div.carousel-inner"
+               }
+            ]
+         },
+         "templateURL":"src/main/webapp/components/templates/carousel.template.html"
+      },
+      {
+         "name":"crn-datasource",
+         "text":"Datasource",
+         "class":"cpn cpn-datasource",
+         "template":"<datasource name=\"\" entity=\"\" keys=\"\" rows-per-page=\"100\" on-before-create=\"\" on-after-create=\"\" on-before-update=\"\" on-after-update=\"\" on-before-delete=\"\" on-after-delete=\"\" on-after-fill=\"\"><i class=\"cpn cpn-datasource\" ></i></datasource>",
+         "properties":{
+            "entity":{
+               "removable":false,
+               "type":"datasourceList"
+            },
+            "keys":{
+               "removable":false,
+               "type":"datasourceKeys"
+            },
+            "filter":{
+               "removable":true,
+               "global":true
+            },
+            "on-before-create":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "on-before-update":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "on-before-delete":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "on-after-create":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "on-after-update":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "on-after-delete":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "on-after-fill":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "on-error":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            },
+            "dependent-by":{
+               "removable":false,
+               "global":true
+            },
+            "dependent-lazy-post":{
+               "removable":false,
+               "global":true
+            },
+            "dependent-lazy-post-field":{
+               "removable":false,
+               "global":true
+            }            
+         }
+      },
+      {
+         "name":"crn-textinput",
+         "text":"Caixa de texto",
+         "class":"cpn cpn-textinput",
+         "templateURL":"src/main/webapp/components/templates/textinput.template.html",
+         "properties":{
+            "onchange":{
+               "removable":true,
+               "type":"event"
+            }
+         }
+      },
+      {
+         "name":"crn-image",
+         "text":"Image",
+         "class":"cpn cpn-image",
+         "template":"<img src=\"http://placehold.it/50x50\" class=\"\" width=\"50\" height=\"50\" />",
+         "properties":{
+            "src":{
+               "removable":false,
+               "type":"projectResource",
+               "resourceType":"image/jpeg,image/gif,image/png"
+            },
+            "onclick":{
+               "removable":true,
+               "type":"event"
+            }
+         }
+      },
+      {
+         "name":"crn-vertical-container",
+         "text":"Vertical Grid",
+         "class":"cpn cpn-vertical-grid",
+         "template":"<div class=\"crn-layout-container\" data-container=\"true\" draggable=\"true\"><div class=\"row\"><div class=\"\"><div data-container=\"true\" data-replace=\"true\">Content goes here</div></div></div><div class=\"row\"><div class=\"\"><div data-container=\"true\" data-replace=\"true\">Content goes here</div></div></div></div>",
+         "handleRules":{
+            "canOrder":false,
+            "canActivate":false,
+            "canIncrement":true,
+            "rules":[
+               {
+                  "sourceHTML":"<div class=\"row\"><div class=\"\"><div data-container=\"true\" data-replace=\"true\">Content goes here</div></div></div>",
+                  "targetSelector":"div.crn-layout-container"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-horizontal-container",
+         "text":"Horizontal Grid",
+         "class":"cpn cpn-horizontal-grid",
+         "template":"<div class=\"row\" data-container=\"true\" draggable=\"true\">\r\n        <div class=\"column col-md-4\"><div data-container=\"true\" data-replace=\"true\">Content goes here</div></div>\r\n        <div class=\"column col-md-4\"><div data-container=\"true\" data-replace=\"true\">Content goes here</div></div>\r\n      </div>",
+         "handleRules":{
+            "canOrder":false,
+            "canActivate":false,
+            "canIncrement":true,
+            "rules":[
+               {
+                  "sourceHTML":"<div class=\"column col-md-4\"><div data-container=\"true\">.col-md-4</div></div>",
+                  "targetSelector":"div.row"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-form",
+         "text":"Form",
+         "class":"cpn cpn-form",
+         "templateURL":"src/main/webapp/components/templates/form.template.html",
+         "properties":{
+            "crn-datasource":{
+               "displayName":"Datasource",
+               "removable":false,
+               "type":"pageDatasource"
+            }
+         }
+      },
+      {
+         "name":"crn-tabs",
+         "text":"Tabs",
+         "class":"cpn cpn-tabs",
+         "handleRules":{
+            "canOrder":true,
+            "canActivate":true,
+            "canIncrement":true,
+            "rules":[
+               {
+                  "activeSelector":"ul.nav-tabs li.active",
+                  "activeClass":"active",
+                  "sourceHTML":"<li role=\"presentation\"><a data-target=\"#tab${RANDOM}\" role=\"tab\" data-toggle=\"tab\">New Tab</a></li>",
+                  "targetSelector":"ul.nav-tabs"
+               },
+               {
+                  "activeSelector":"div.tab-content .tab-pane.active",
+                  "activeClass":"active",
+                  "sourceHTML":"<div role=\"tabpanel\" class=\"tab-pane\" id=\"tab${RANDOM}\"><div class=\"\" data-container=\"true\"></div>",
+                  "targetSelector":"div.tab-content"
+               }
+            ]
+         },
+         "templateURL":"src/main/webapp/components/templates/tabs.template.html"
+      },
+      {
+         "name":"crn-datepicker",
+         "text":"Date",
+         "class":"cpn cpn-date",
+         "templateURL":"src/main/webapp/components/templates/date.template.html"
+      },
+      {
+         "name":"crn-timepicker",
+         "text":"Time",
+         "class":"cpn cpn-time",
+         "templateURL":"src/main/webapp/components/templates/time.template.html"
+      },
+      {
+         "name":"crn-datetimepicker",
+         "text":"DateTime",
+         "class":"cpn cpn-datetime",
+         "templateURL":"src/main/webapp/components/templates/datetime.template.html"
+      },
+      {
+         "name":"crn-upload",
+         "text":"File Upload",
+         "class":"cpn cpn-upload",
+         "templateURL":"src/main/webapp/components/templates/fileupload.template.html",
+         "properties":{
+
+         }
+      },
+      {
+         "name":"crn-grid",
+         "text":"Table",
+         "class":"cpn cpn-table",
+         "templateURL":"src/main/webapp/components/templates/grid.template.html",
+         "properties":{
+
+         },
+         "childrenProperties":[
+            {
+               "name":"crn-datasource",
+               "selector":"div[crn-datasource]",
+               "displayName":"datasource"
+            }
+         ],
+         "handleRules":{
+            "canOrder":true,
+            "canActivate":true,
+            "canIncrement":true,
+            "rules":[
+               {
+                  "activeSelector":".table-header th.active",
+                  "activeClass":"active",
+                  "sourceHTML":"<th><div data-container=\"true\">New Title</div></th>",
+                  "targetSelector":".table-header"
+               },
+               {
+                  "activeSelector":".table-content td.active",
+                  "activeClass":"active",
+                  "sourceHTML":"<td><div data-container=\"true\">New Content</div></td>",
+                  "targetSelector":".table-content"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-combobox",
+         "text":"Combobox",
+         "class":"cpn cpn-combobox",
+         "templateURL":"src/main/webapp/components/templates/combobox.template.html",
+         "handleRules":{
+            "canToggle":true,
+            "rules":[
+               {
+                  "toggleSelector":"ui-select-choices",
+                  "toggleClass":"invisible"
+               }
+            ]
+         },
+         "childrenProperties":[
+            {
+               "name":"crn-datasource",
+               "selector":"ui-select",
+               "displayName":"items"
+            },
+            {
+               "name":"ng-model",
+               "selector":"ui-select",
+               "displayName":"ng-model"
+            },
+            {
+               "name":"repeat",
+               "selector":"ui-select-choices",
+               "displayName":"repeat"
+            }
+         ]
+      },
+      {
+         "name":"crn-combobox-dynamic",
+         "text":"Dynamic Combobox",
+         "class":"cpn cpn-combobox-dynamic",
+         "templateURL":"src/main/webapp/components/templates/combobox-dynamic.template.html",
+         "handleRules":{
+            "canToggle":true,
+            "rules":[
+               {
+                  "toggleSelector":"ui-select-choices",
+                  "toggleClass":"invisible"
+               }
+            ]
+         },
+         "childrenProperties":[
+            {
+               "name":"crn-datasource",
+               "selector":"ui-select",
+               "displayName":"datasource"
+            },
+            {
+               "name":"repeat",
+               "selector":"ui-select-choices",
+               "displayName":"repeat"
+            }
+         ]
+      },
+      {
+         "name":"crn-radiogroup",
+         "text":"Radio Group",
+         "class":"cpn cpn-radiogroup",
+         "templateURL":"src/main/webapp/components/templates/radiogroup.template.html",
+         "handleRules":{
+            "canIncrement":true,
+            "rules":[
+               {
+                  "sourceHTML":"<div class=\"radio\">\n  <label class=\"\" crn-value value=\"Value Two\"> \n       <input type=\"radio\" name=\"optionsRadios\" id=\"optionsRadios${RANDOM}\" value=\"\"> \n       <span class=\"\">New option</span> \n </label> \n</div>",
+                  "targetSelector":".form-group"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-checkbox",
+         "text":"Checkbox",
+         "class":"cpn cpn-checkbox",
+         "templateURL":"src/main/webapp/components/templates/checkbox.template.html"
+      },
+      {
+         "name":"crn-navbar",
+         "text":"Navbar",
+         "class":"cpn cpn-navbar",
+         "templateURL":"src/main/webapp/components/templates/navbar.template.html",
+         "handleRules":{
+            "canIncrement":true,
+            "rules":[
+               {
+                  "sourceHTML":"<li class=\"dropdown component-holder\" data-component=\"crn-menu-item\"> <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"><span>Menu Item</span> <span class=\"caret\"></span></a> <ul class=\"dropdown-menu\">   <li><a href=\"#\" class=\"component-holder\" data-component=\"crn-anchor\">Action Item</a></li> </ul></li>",
+                  "targetSelector":".nav.navbar-nav"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-menu-item",
+         "text":"MenuItem",
+         "class":"cpn cpn-navbar",
+         "template":"",
+         "pallete":false,
+         "handleRules":{
+            "canToggle":true,
+            "canIncrement":true,
+            "rules":[
+               {
+                  "toggleSelector":".dropdown",
+                  "toggleClass":"open",
+                  "sourceHTML":"<li><a href=\"#\" class=\"component-holder\" data-component=\"crn-anchor\">Action item</a></li>",
+                  "targetSelector":"ul.dropdown-menu"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-sidebar",
+         "text":"Sidebar",
+         "class":"cpn cpn-sidebar",
+         "templateURL":"src/main/webapp/components/templates/sidebar.template.html",
+         "handleRules":{
+            "canIncrement":true,
+            "rules":[
+               {
+                  "sourceHTML":"<li data-toggle=\"collapse\" data-component=\"crn-sidebar-item\" data-target=\"#menu-sub-${RANDOM}\" class=\"collapsed active component-holder\"><a href=\"javascript:void(0);\" class=\"\"><i class=\"fa fa-users fa-lg\"></i> <span>Menu Item</span> <span class=\"arrow\"></span></a> <ul class=\"sub-menu collapse  navbar-nav in\" id=\"menu-sub-${RANDOM}\"> <li><a href=\"#/\" class=\"component-holder\" data-component=\"crn-anchor\">Submenu Item</a></li>  </ul> </li> ",
+                  "targetSelector":".menu-content"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-sidebar-item",
+         "text":"MenuItem",
+         "class":"cpn cpn-sidebar",
+         "template":"",
+         "pallete":false,
+         "handleRules":{
+            "canIncrement":true,
+            "canToggle":true,
+            "rules":[
+               {
+                  "toggleSelector":".sub-menu.collapse",
+                  "toggleClass":"in",
+                  "sourceHTML":"<li><a href=\"#/\" class=\"component-holder\" data-component=\"crn-anchor\">Submenu Item</a></li>",
+                  "targetSelector":".sub-menu"
+               }
+            ]
+         }
+      },
+      {
+         "name":"crn-chart-bar",
+         "text":"Chart Bar",
+         "class":"cpn cpn-chart-bar",
+         "templateURL":"src/main/webapp/components/templates/chart-bar.template.html"
+      },
+      {
+         "name":"crn-chart-doughnut",
+         "text":"Chart Doughnut",
+         "class":"cpn cpn-chart-doughnut",
+         "templateURL":"src/main/webapp/components/templates/chart-doughnut.template.html"
+      },
+      {
+         "name":"crn-chart-line",
+         "text":"Chart Line",
+         "class":"cpn cpn-chart-line",
+         "templateURL":"src/main/webapp/components/templates/chart-line.template.html"
+      },
+      {
+         "name":"crn-chart-pie",
+         "text":"Chart Pie",
+         "class":"cpn cpn-chart-pie",
+         "templateURL":"src/main/webapp/components/templates/chart-pie.template.html"
+      },
+      {
+         "name":"crn-chart-polar-area",
+         "text":"Chart Polar Area",
+         "class":"cpn cpn-chart-polar-area",
+         "templateURL":"src/main/webapp/components/templates/chart-polar-area.template.html"
+      },
+      {
+         "name":"crn-chart-radar",
+         "text":"Chart Radar",
+         "class":"cpn cpn-chart-radar",
+         "templateURL":"src/main/webapp/components/templates/chart-radar.template.html"
+      },
+      {
+         "name":"crn-chart-gauge",
+         "text":"Chart Gauge",
+         "class":"cpn cpn-chart-gauge",
+         "templateURL":"src/main/webapp/components/templates/chart-gauge.template.html"
+      },
+      {
+         "name":"crn-title",
+         "text":"Título",
+         "class":"cpn cpn-title",
+         "templateURL":"src/main/webapp/components/templates/title.template.html"
+      },
+      {
+         "name":"crn-text",
+         "text":"Texto",
+         "class":"cpn cpn-text",
+         "templateURL":"src/main/webapp/components/templates/text.template.html"
+      },
+      {
+         "name":"crn-tags",
+         "text":"Multiselect",
+         "dependences":{
+            "editor":[
+               "components/css/multiselect-editor.css"
+            ]
+         },
+         "class":"cpn cpn-tags-input",
+         "templateURL":"src/main/webapp/components/templates/multiselect.template.html",
+         "childrenProperties":[
+            {
+               "name":"crn-datasource",
+               "selector":"ui-select",
+               "displayName":"datasource"
+            },
+            {
+               "name":"ng-model",
+               "selector":"ui-select",
+               "displayName":"ng-model"
+            },
+            {
+               "name":"repeat",
+               "selector":"ui-select-choices",
+               "displayName":"repeat"
+            }
+         ]
+      }
+   ]
+}

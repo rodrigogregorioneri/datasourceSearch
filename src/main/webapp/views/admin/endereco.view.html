@@ -1,0 +1,23 @@
+<div data-container="true" id="starter"><div class="component-holder ng-binding ng-scope" data-component="crn-datasource" id="crn-datasource-848698"><datasource name="dados" entity="api/rest/Endereco" keys="id" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" on-after-fill="" filter="{{( '/listByCidade/' + entrada)}}"></datasource></div><div class="component-holder ng-binding ng-scope" data-component="crn-textinput" id="crn-textinput-571798"><div class="form-group">
+	<label for="exampleInputEmail1">Digite sua cidade:</label>
+	<input type="text" ng-model="entrada" class="form-control" id="textinput-id" placeholder="Placeholder text"><div class="component-holder ng-binding ng-scope" data-component="crn-grid" id="crn-grid-779424"><div crn-datasource="dados">
+  
+  <br><br><br><br>
+  <table class="table  table-bordered table-hover">
+    <thead>
+      <tr class="table-header">
+        <th class="active"><div data-container="true">Cidade</div></th>
+        <th><div data-container="true">Estado</div></th>
+      </tr>
+    </thead>
+      <tbody><tr class="table-content" ng-repeat="rowData in datasource.data">
+        <td class="active"><div data-container="true" content="{{rowData.cidade}}">{{rowData.cidade}}</div></td>
+        <td><div data-container="true" content="{{rowData.estado}}">{{rowData.estado}}</div></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-footer-controls">
+    <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button>
+  </div>
+</div></div>
+</div></div></div>
